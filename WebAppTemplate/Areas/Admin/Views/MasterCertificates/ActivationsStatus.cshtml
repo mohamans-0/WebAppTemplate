@@ -1,0 +1,71 @@
+﻿@model WebAppTemplate.ViewModels.MasterCertificatesViewModel
+
+@{
+    ViewData["Title"] = "ActivationsStatus";
+}
+
+<h1>ActivationsStatus</h1>
+
+@if (Model.isActive)
+{
+    <h3>Are you sure you want to deactivate this?</h3>
+}
+else
+{
+    <h3>Are you sure you want to activate this?</h3>
+}
+<div>
+    <h4>MasterCertificates</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageURL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CertificationName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CertificationName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Keyword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Keyword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+    </dl>
+    
+   <form asp-action="ActivationsStatus">
+        <input type="hidden" asp-for="Id" />
+        @if (Model.isActive)
+        {
+            <input type="submit" value="Deactivate" class="btn btn-danger" />
+        }
+        else
+        {
+            <input type="submit" value="Activate" class="btn btn-danger" />
+        }
+        <a class="btn btn-primary" asp-action="Index">Back to List</a>
+    </form>
+</div>

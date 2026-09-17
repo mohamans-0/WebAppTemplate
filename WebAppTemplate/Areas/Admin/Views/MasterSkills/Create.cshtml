@@ -1,0 +1,60 @@
+﻿@model WebAppTemplate.ViewModels.MasterSkillsViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MasterSkills</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SkillName" class="control-label"></label>
+                <input asp-for="SkillName" class="form-control" />
+                <span asp-validation-for="SkillName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Percentage" class="control-label"></label>
+                <input asp-for="Percentage" class="form-control" />
+                <span asp-validation-for="Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="orderNumber" class="control-label"></label>
+                <input asp-for="orderNumber" class="form-control" />
+                <span asp-validation-for="orderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isCoding" /> @Html.DisplayNameFor(model => model.isCoding)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isKnowledges" /> @Html.DisplayNameFor(model => model.isKnowledges)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isDesign" /> @Html.DisplayNameFor(model => model.isDesign)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isActive" /> @Html.DisplayNameFor(model => model.isActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

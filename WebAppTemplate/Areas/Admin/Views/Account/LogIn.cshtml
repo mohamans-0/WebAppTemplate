@@ -1,0 +1,58 @@
+﻿@using WebAppTemplate.ViewModels
+@model LogInViewModel
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutLogIn";
+}
+
+<form class="form-horizontal mt-3" asp-action="Login">
+
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <input class="form-control" asp-for="Username" required placeholder="Username">
+        </div>
+    </div>
+
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <input class="form-control" asp-for="Password"  required placeholder="Password">
+        </div>
+    </div>
+
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" asp-for="RememberMe" class="custom-control-input" >
+                <label class="form-label ms-1" asp-for="RememberMe">Remember me</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mb-3 text-center row mt-3 pt-1">
+        <div class="col-12">
+            <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Log In</button>
+        </div>
+    </div>
+
+    <div class="form-group mb-0 row mt-2">
+        <div class="col-sm-7 mt-3">
+            <a asp-area="Admin" asp-action="ForgotPassword" asp-controller="Account" class="text-muted">
+                <i class="mdi mdi-lock">
+                </i> Forgot your password?
+                </a>
+        </div>
+        <div class="col-sm-5 mt-3">
+            <a asp-area="Admin" asp-action="CreateUser" asp-controller="Account" class="text-muted">
+                <i class="mdi mdi-account-circle">
+                </i> Create an account
+            </a>
+        </div>
+    </div>
+</form>
+
+
+            

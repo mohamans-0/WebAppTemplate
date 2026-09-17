@@ -1,0 +1,60 @@
+﻿@model WebAppTemplate.ViewModels.MasterSkillsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MasterSkills</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkillName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkillName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Percentage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Percentage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isCoding)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isCoding)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isDesign)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isDesign)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isKnowledges)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isKnowledges)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.orderNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.orderNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

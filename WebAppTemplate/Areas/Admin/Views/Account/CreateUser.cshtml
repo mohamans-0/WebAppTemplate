@@ -1,0 +1,51 @@
+﻿@using WebAppTemplate.ViewModels
+@model RegisterViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "_LayoutLogOut";
+}
+
+
+<form asp-area="Admin" asp-controller="Account"asp-action="CreateUser"method="post">
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <input class="form-control" asp-for="Email" type="email" required="" placeholder="Email">
+        </div>
+    </div>
+        
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <input class="form-control" asp-for="Username" type="text" required="" placeholder="Username">
+        </div>
+    </div>
+
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <input class="form-control" asp-for="Password" type="password" required="" placeholder="Password">
+        </div>
+    </div>
+
+    <div class="form-group mb-3 row">
+        <div class="col-12">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="form-label ms-1 fw-normal" for="customCheck1">I accept <a href="#" class="text-muted">Terms and Conditions</a></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group text-center row mt-3 pt-1">
+        <div class="col-12">
+            <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Register</button>
+        </div>
+    </div>
+
+    <div class="form-group mt-2 mb-0 row">
+        <div class="col-12 mt-3 text-center">
+            <a asp-area="Admin"asp-controller="Account" asp-action="LogIn" class="text-muted">Already have account?</a>
+        </div>
+    </div>
+</form>
